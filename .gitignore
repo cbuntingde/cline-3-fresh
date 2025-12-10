@@ -1,0 +1,445 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-standalone/
+build/
+out/
+*.tsbuildinfo
+
+# VSCode extension files
+*.vsix
+*.vsix-manifest.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Temporary folders
+tmp/
+temp/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# WebStorm
+.idea/
+
+# Vim
+*.swp
+*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Project specific
+# Build artifacts
+webview-ui/build/
+webview-ui/dist/
+
+# Test coverage
+coverage/
+*.lcov
+
+# Debug files
+*.debug.js
+*.debug.map
+
+# Standalone build artifacts
+standalone/
+dist-standalone/*.zip
+dist-standalone/*.wasm
+
+# Protocol buffer generated files (if any)
+proto/generated/
+
+# Documentation build
+docs/build/
+docs/.vite/
+
+# Evaluation results
+evals/results/
+evals/output/
+
+# Backup files
+*.bak
+*.backup
+backup.*
+
+# Local configuration
+config.local.json
+.env.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Lock files (keep package-lock.json but ignore others)
+yarn.lock
+pnpm-lock.yaml
+
+# Generated documentation
+docs/generated/
+api-docs/
+
+# Performance profiling
+*.cpuprofile
+*.heapprofile
+
+# Sentry
+.sentryclirc
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Kubernetes
+*.kubeconfig
+
+# Local development
+.local/
+local/
+
+# Test artifacts
+test-results/
+playwright-report/
+test-results.xml
+
+# Bundle analyzer
+bundle-analyzer-report.html
+
+# Webpack
+.webpack/
+
+# Rollup
+.rollup.cache
+
+# Vite
+.vite/
+
+# ESLint
+.eslintcache
+
+# Prettier
+.prettiercache
+
+# TypeScript
+*.tsbuildinfo
+
+# Jest
+coverage/
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Storybook
+storybook-static/
+
+# Local environment overrides
+.env.override
+.env.*.local
+
+# IDE specific
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/tasks.json
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# Project-specific build outputs
+dist-standalone/standalone.js
+dist-standalone/standalone.js.map
+
+# WASM files (if not committed)
+*.wasm
+
+# Proto generated files
+proto/generated/
+
+# Local development scripts
+scripts/local-*
+scripts/dev-*
+
+# Benchmark results
+benchmark-results/
+*.benchmark
+
+# Profiling data
+*.prof
+*.profile
+
+# Memory dumps
+*.hprof
+*.dump
+
+# Crash logs
+crash.log
+*.crash
+
+# System logs
+system.log
+*.syslog
+
+# Application logs
+app.log
+application.log
+error.log
+access.log
+
+# Debug logs
+debug.log
+trace.log
+
+# Local database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+cache/
+
+# Temporary uploads
+uploads/
+temp-uploads/
+
+# Session files
+sessions/
+*.session
+
+# Lock files
+*.lock
+.lock
+
+# PID files
+*.pid
+
+# State files
+*.state
+.state.json
+
+# Backup and archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+backup/
+backups/
+
+# Generated certificates
+*.pem
+*.key
+*.crt
+*.p12
+certificates/
+
+# SSH keys
+*.pem
+id_rsa*
+id_ed25519*
+
+# GPG keys
+*.gpg
+*.asc
+secring.gpg
+pubring.gpg
+
+# Local configuration overrides
+config.local.*
+settings.local.*
+overrides.local.*
+
+# Development tools
+.devcontainer/
+.gitpod.yml
+
+# Monitoring and metrics
+metrics/
+monitoring/
+.grafana/
+.prometheus/
+
+# CI/CD local overrides
+.github/workflows/local-*
+.gitlab-ci.local.*
+bitbucket-pipelines.local.*
+
+# Local documentation
+docs/local/
+.local-docs/
+
+# Experimental features
+experimental/
+feature-flags.local.*
+
+# User-specific data
+user-data/
+user-config/
+preferences.local.*
+
+# Local scripts
+scripts/local-*
+bin/local-*
+
+# Development databases
+dev-db/
+test-db/
+
+# Local services
+services.local.*
+docker-compose.local.yml
+docker-compose.dev.yml
+
+# Environment-specific
+.env.development
+.env.staging
+.env.production
+.env.test
+
+# Feature flags
+feature-flags.local.*
+features.local.*
+
+# Local overrides for any config files
+*.local.*
+*.override.*
+
+# Keep package-lock.json but ignore other lock files
+# package-lock.json should be committed for reproducible builds

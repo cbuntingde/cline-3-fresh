@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+package cline;
+option java_package = "bot.cline.proto";
+option java_multiple_files = true;
+
+import "common.proto";
+
+// MemoryService provides methods for managing memory
+service MemoryService {
+  rpc GetMemoryStats(GetMemoryStatsRequest) returns (MemoryStatsResponse);
+  rpc GetCurrentProjectMemory(GetCurrentProjectMemoryRequest) returns (ProjectMemoryResponse);
+  rpc ClearProjectMemory(ClearProjectMemoryRequest) returns (StringValue);
+  rpc ExportMemory(ExportMemoryRequest) returns (StringValue);
+  rpc ImportMemory(ImportMemoryRequest) returns (StringValue);
+  rpc AnalyzeConversation(AnalyzeConversationRequest) returns (StringValue);
+  rpc GetRelevantContext(GetRelevantContextRequest) returns (StringValue);
+}
+
+// Request and response messages
+message GetMemoryStatsRequest {
+  Metadata metadata = 1;
+}
+
+message MemoryStatsResponse {
+  int32 total_memories = 1;
+  map<string, int32> patterns_by_type = 2;
+  int32 conversation_count = 3;
+  int32 project_count = 4;
+  int64 last_updated = 5;
+  int64 memory_usage = 6;
+}
+
+message GetCurrentProjectMemoryRequest {
+  Metadata metadata = 1;
+}
+
+message ProjectMemoryResponse {
+  string project_id = 1;
+  string project_name = 2;
+  string project_path = 3;
+  int64 last_updated = 4;
+  ProjectContext context = 5;
+  repeated LearnedPattern learned_patterns = 6;
+  ConversationSummary conversation_summary = 7;
+  FileStructureMemory file_structure = 8;
+  UserPreferences user_preferences = 9;
+}
+
+message ProjectContext {
+  repeated string technologies = 1;
+  repeated string frameworks = 2;
+  repeated string languages = 3;
+  map<string, string> dependencies = 4;
+  repeated string build_tools = 5;
+  repeated string testing_frameworks = 6;
+  repeated string coding_standards = 7;
+  repeated string architecture = 8;
+}
+
+message LearnedPattern {
+  string id = 1;
+  string type = 2;
+  string description = 3;
+  string pattern = 4;
+  string context = 5;
+  double confidence = 6;
+  int64 created_at = 7;
+  int64 last_used = 8;
+  int32 usage_count = 9;
+  repeated string tags = 10;
+}
+
+message ConversationSummary {
+  int32 total_conversations = 1;
+  repeated string topics = 2;
+  repeated string frequent_questions = 3;
+  repeated string common_issues = 4;
+  repeated string successful_solutions = 5;
+  repeated string last_conversation_topics = 6;
+}
+
+message FileStructureMemory {
+  repeated string important_files = 1;
+  repeated string frequently_modified = 2;
+  map<string, string> file_purposes = 3;
+  repeated string directories = 4;
+  repeated string entry_points = 5;
+}
+
+message UserPreferences {
+  string coding_style = 1;
+  string commenting_style = 2;
+  repeated string naming_conventions = 3;
+  repeated string preferred_libraries = 4;
+  repeated string avoidance_patterns = 5;
+  string communication_style = 6;
+}
+
+message ClearProjectMemoryRequest {
+  Metadata metadata = 1;
+  string project_id = 2;
+}
+
+message ExportMemoryRequest {
+  Metadata metadata = 1;
+  string project_id = 2;
+}
+
+message ImportMemoryRequest {
+  Metadata metadata = 1;
+  string project_id = 2;
+  string memory_json = 3;
+}
+
+message AnalyzeConversationRequest {
+  Metadata metadata = 1;
+  repeated string messages = 2;
+}
+
+message GetRelevantContextRequest {
+  Metadata metadata = 1;
+  string query = 2;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"host-grpc-service-config.js","sourceRoot":"","sources":["host-grpc-service-config.ts"],"names":[],"mappings":";AAAA,+CAA+C;AAC/C,oCAAoC;;;AAGpC,uCAAuF;AACvF,yCAA6F;AAU7F;;GAEG;AACU,QAAA,mBAAmB,GAA6C;IAC3E,iBAAiB,EAAE;QACjB,cAAc,EAAE,+BAAuB;QACvC,gBAAgB,EAAE,wCAAgC;KACnD;IACD,mBAAmB,EAAE;QACnB,cAAc,EAAE,iCAAyB;QACzC,gBAAgB,EAAE,0CAAkC;KACrD;CACF,CAAC"}
