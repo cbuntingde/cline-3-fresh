@@ -1,6 +1,6 @@
 import Thumbnails from "@/components/common/Thumbnails"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { CheckpointsServiceClient } from "@/services/grpc-client"
+import { CheckpointsServiceClient } from "@/services/grpc-client.ts"
 import { ClineCheckpointRestore } from "@shared/WebviewMessage"
 import { CheckpointRestoreRequest } from "@shared/proto/checkpoints"
 import React, { forwardRef, useRef, useState } from "react"

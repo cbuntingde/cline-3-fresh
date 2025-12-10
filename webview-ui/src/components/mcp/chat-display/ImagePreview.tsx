@@ -1,5 +1,5 @@
 import ChatErrorBoundary from "@/components/chat/ChatErrorBoundary"
-import { WebServiceClient } from "@/services/grpc-client"
+import { WebServiceClient } from "@/services/grpc-client.ts"
 import { StringRequest } from "@shared/proto/common"
 import DOMPurify from "dompurify"
 import React from "react"

@@ -1,4 +1,4 @@
-import { FileServiceClient } from "@/services/grpc-client"
+import { FileServiceClient } from "@/services/grpc-client.ts"
 import { DeleteRuleFileRequest } from "@shared/proto-conversions/file/rule-files-conversion"
 import { StringRequest } from "@shared/proto/common"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"

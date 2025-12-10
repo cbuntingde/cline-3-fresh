@@ -1,5 +1,5 @@
 import { CODE_BLOCK_BG_COLOR } from "@/components/common/CodeBlock"
-import { CheckpointsServiceClient } from "@/services/grpc-client"
+import { CheckpointsServiceClient } from "@/services/grpc-client.ts"
 import { ExtensionMessage } from "@shared/ExtensionMessage"
 import { CheckpointRestoreRequest } from "@shared/proto/checkpoints"
 import { Int64Request } from "@shared/proto/common"

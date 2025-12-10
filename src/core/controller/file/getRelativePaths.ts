@@ -27,7 +27,6 @@ export const getRelativePaths: FileMethodHandler = async (
 					}),
 				)
 				const fileUri = vscode.Uri.parse(`${parseResponse.scheme}://${parseResponse.authority}${parseResponse.path}`)
-				console.log("[DEBUG] UriServiceClient.parse:", fileUri)
 				const relativePathToGet = vscode.workspace.asRelativePath(fileUri, false)
 
 				// If the path is still absolute, it's outside the workspace

@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from "react"
 import { useEvent } from "react-use"
-import { StateServiceClient, ModelsServiceClient, UiServiceClient } from "../services/grpc-client"
+import { StateServiceClient, ModelsServiceClient, UiServiceClient } from "../services/grpc-client.ts"
 import { EmptyRequest } from "@shared/proto/common"
 import { WebviewProviderType as WebviewProviderTypeEnum, WebviewProviderTypeRequest } from "@shared/proto/ui"
 import { DEFAULT_AUTO_APPROVAL_SETTINGS } from "@shared/AutoApprovalSettings"
@@ -19,7 +19,7 @@ import {
 } from "../../../src/shared/api"
 import { McpMarketplaceCatalog, McpServer, McpViewTab } from "../../../src/shared/mcp"
 import { convertTextMateToHljs } from "../utils/textMateToHljs"
-import { vscode } from "../utils/vscode"
+import { vscode } from "../utils/vscode.ts"
 
 interface ExtensionStateContextType extends ExtensionState {
 	didHydrateState: boolean

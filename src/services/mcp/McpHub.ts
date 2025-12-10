@@ -127,7 +127,6 @@ export class McpHub {
 		const settingsPath = await this.getMcpSettingsFilePath()
 
 		// Subscribe to file changes using the gRPC WatchService
-		console.log("[DEBUG] subscribing to mcp file changes")
 		const cancelSubscription = WatchServiceClient.subscribeToFile(
 			SubscribeToFileRequest.create({
 				metadata: Metadata.create({}),
@@ -157,7 +156,6 @@ export class McpHub {
 					console.error("Error watching MCP settings file:", error)
 				},
 				onComplete: () => {
-					console.log("[DEBUG] MCP settings file watch completed")
 				},
 			},
 		)

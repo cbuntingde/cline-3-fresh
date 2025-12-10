@@ -1,4 +1,4 @@
-import { StateServiceClient } from "@/services/grpc-client"
+import { StateServiceClient } from "@/services/grpc-client.ts"
 import { AutoApprovalSettings } from "@shared/AutoApprovalSettings"
 import { convertAutoApprovalSettingsToProto } from "@shared/proto-conversions/models/auto-approval-settings-conversion"
 

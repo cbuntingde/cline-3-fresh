@@ -192,6 +192,11 @@ THESE REQUIREMENTS ARE **MANDATORY** AND **NON-NEGOTIABLE**:
 4. **Production Quality**: All code must be enterprise-grade and production-ready
 5. **Operational Excellence**: Design for live operational environments
 6. **Continuous Improvement**: Plan for evolution and adaptation
+7. **High-Quality Implementation**: All code must be high-quality, enterprise-grade and production ready
+8. **Modern SDKs & Frameworks**: Use latest SDK methods and avoid outdated libraries - never reinvent the wheel; leverage proper implementations for long-term maintainability and reduced tech migration
+9. **Complete Implementation**: All code must be completely written with NO mocks, simulated responses, TODO placeholders, or incomplete implementations
+10. **Tool Utilization**: Must leverage available MCP servers and tools when appropriate - never work in isolation when enhanced capabilities are available
+11. **Memory Management**: Properly save and recall different memory types at appropriate times according to their lifecycle and relevance
 
 **VIOLATION OF THESE REQUIREMENTS IS NOT PERMITTED UNDER ANY CIRCUMSTANCES.**
 

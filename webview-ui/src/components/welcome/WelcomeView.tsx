@@ -2,10 +2,10 @@ import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 import { useEffect, useState, memo } from "react"
 import { useExtensionState } from "@/context/ExtensionStateContext"
 import { validateApiConfiguration } from "@/utils/validate"
-import { vscode } from "@/utils/vscode"
+import { vscode } from "@/utils/vscode.ts"
 import ApiOptions from "@/components/settings/ApiOptions"
 import ClineLogoWhite from "@/assets/ClineLogoWhite"
-import { AccountServiceClient } from "@/services/grpc-client"
+import { AccountServiceClient } from "@/services/grpc-client.ts"
 import { EmptyRequest } from "@shared/proto/common"
 
 const WelcomeView = memo(() => {

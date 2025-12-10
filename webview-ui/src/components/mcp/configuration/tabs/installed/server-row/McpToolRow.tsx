@@ -1,5 +1,5 @@
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { McpServiceClient } from "@/services/grpc-client"
+import { McpServiceClient } from "@/services/grpc-client.ts"
 import { McpTool } from "@shared/mcp"
 import { convertProtoMcpServersToMcpServers } from "@shared/proto-conversions/mcp/mcp-server-conversion"
 import { ToggleToolAutoApproveRequest } from "@shared/proto/mcp"

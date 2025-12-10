@@ -1,4 +1,4 @@
-import { WebServiceClient } from "@/services/grpc-client"
+import { WebServiceClient } from "@/services/grpc-client.ts"
 import { StringRequest } from "@shared/proto/common"
 
 // Safely create a URL object with error handling and ensure HTTPS

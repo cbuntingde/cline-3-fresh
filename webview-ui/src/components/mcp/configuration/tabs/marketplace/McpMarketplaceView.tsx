@@ -10,7 +10,7 @@ import {
 } from "@vscode/webview-ui-toolkit/react"
 import { McpMarketplaceItem } from "@shared/mcp"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { vscode } from "@/utils/vscode"
+import { vscode } from "@/utils/vscode.ts"
 import McpMarketplaceCard from "./McpMarketplaceCard"
 import McpSubmitCard from "./McpSubmitCard"
 const McpMarketplaceView = () => {

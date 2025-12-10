@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from "react"
 import { useExtensionState } from "@/context/ExtensionStateContext"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
-import { vscode } from "@/utils/vscode"
+import { vscode } from "@/utils/vscode.ts"
 
 interface DiagnosticsStatusProps {
 	onRefresh?: () => void

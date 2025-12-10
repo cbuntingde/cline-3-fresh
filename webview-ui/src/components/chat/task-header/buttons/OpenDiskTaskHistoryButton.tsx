@@ -1,5 +1,5 @@
 import HeroTooltip from "@/components/common/HeroTooltip"
-import { FileServiceClient } from "@/services/grpc-client"
+import { FileServiceClient } from "@/services/grpc-client.ts"
 import { StringRequest } from "@shared/proto/common"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 

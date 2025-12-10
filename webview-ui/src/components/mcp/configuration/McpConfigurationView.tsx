@@ -1,6 +1,6 @@
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { McpServiceClient } from "@/services/grpc-client"
-import { vscode } from "@/utils/vscode"
+import { McpServiceClient } from "@/services/grpc-client.ts"
+import { vscode } from "@/utils/vscode.ts"
 import { McpViewTab } from "@shared/mcp"
 import { EmptyRequest } from "@shared/proto/common"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"

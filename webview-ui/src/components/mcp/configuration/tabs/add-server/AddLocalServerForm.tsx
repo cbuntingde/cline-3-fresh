@@ -1,5 +1,5 @@
 import { LINKS } from "@/constants"
-import { McpServiceClient } from "@/services/grpc-client"
+import { McpServiceClient } from "@/services/grpc-client.ts"
 import { EmptyRequest } from "@shared/proto/common"
 import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 import styled from "styled-components"

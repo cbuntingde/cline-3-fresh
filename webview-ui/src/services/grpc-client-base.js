@@ -1,40 +1,12 @@
-import { vscode } from "../utils/vscode.ts"
-import { v4 as uuidv4 } from "uuid"
-
-// Generic type for any protobuf service definition
-export type ProtoService = {
-	name: string
-	fullName: string
-	methods: {
-		[key: string]: {
-			name: string
-			requestType: any
-			responseType: any
-			requestStream: boolean
-			responseStream: boolean
-			options: any
-		}
-	}
-}
-
-// Define a unified client type that handles both unary and streaming methods
-export type GrpcClientType<T extends ProtoService> = {
-	[K in keyof T["methods"]]: T["methods"][K]["responseStream"] extends true
-		? (
-				request: InstanceType<T["methods"][K]["requestType"]>,
-				options: {
-					onResponse: (response: InstanceType<T["methods"][K]["responseType"]>) => void
-					onError?: (error: Error) => void
-					onComplete?: () => void
-				},
-			) => () => void // Returns a cancel function
-		: (request: InstanceType<T["methods"][K]["requestType"]>) => Promise<InstanceType<T["methods"][K]["responseType"]>>
-}
-
+"use strict"
+Object.defineProperty(exports, "__esModule", { value: true })
+exports.createGrpcClient = createGrpcClient
+const vscode_1 = require("../utils/vscode")
+const uuid_1 = require("uuid")
 /**
  * Helper function to encode request objects
  */
-function encodeRequest(request: any): any {
+function encodeRequest(request) {
 	if (request === null || request === undefined) {
 		return {}
 	} else if (typeof request.toJSON === "function") {
@@ -45,27 +17,17 @@ function encodeRequest(request: any): any {
 		return { value: request }
 	}
 }
-
 // Create a client for any protobuf service with inferred types
-export function createGrpcClient<T extends ProtoService>(service: T): GrpcClientType<T> {
-	const client = {} as GrpcClientType<T>
-
+function createGrpcClient(service) {
+	const client = {}
 	// For each method in the service
 	Object.entries(service.methods).forEach(([methodKey, method]) => {
 		if (method.responseStream) {
 			// Streaming method implementation
-			client[methodKey as keyof GrpcClientType<T>] = ((
-				request: any,
-				options: {
-					onResponse: (response: any) => void
-					onError?: (error: Error) => void
-					onComplete?: () => void
-				},
-			) => {
-				const requestId = uuidv4()
-
+			client[methodKey] = (request, options) => {
+				const requestId = (0, uuid_1.v4)()
 				// Set up listener for streaming responses
-				const handleResponse = (event: MessageEvent) => {
+				const handleResponse = (event) => {
 					const message = event.data
 					if (message.type === "grpc_response" && message.grpc_response?.request_id === requestId) {
 						if (message.grpc_response.error) {
@@ -83,7 +45,6 @@ export function createGrpcClient<T extends ProtoService>(service: T): GrpcClient
 								const response = responseType.fromJSON(message.grpc_response.message)
 								options.onResponse(response)
 							}
-
 							if (options.onComplete) {
 								options.onComplete()
 							}
@@ -99,13 +60,10 @@ export function createGrpcClient<T extends ProtoService>(service: T): GrpcClient
 						}
 					}
 				}
-
 				window.addEventListener("message", handleResponse)
-
 				// Send the streaming request
 				const encodedRequest = encodeRequest(request)
-
-				vscode.postMessage({
+				vscode_1.vscode.postMessage({
 					type: "grpc_request",
 					grpc_request: {
 						service: service.fullName,
@@ -115,12 +73,11 @@ export function createGrpcClient<T extends ProtoService>(service: T): GrpcClient
 						is_streaming: true,
 					},
 				})
-
 				// Return a function to cancel the stream
 				return () => {
 					window.removeEventListener("message", handleResponse)
 					// Send cancellation message
-					vscode.postMessage({
+					vscode_1.vscode.postMessage({
 						type: "grpc_request_cancel",
 						grpc_request_cancel: {
 							request_id: requestId,
@@ -128,20 +85,18 @@ export function createGrpcClient<T extends ProtoService>(service: T): GrpcClient
 					})
 					console.log(`[DEBUG] Sent cancellation for request: ${requestId}`)
 				}
-			}) as any
+			}
 		} else {
 			// Unary method implementation
-			client[methodKey as keyof GrpcClientType<T>] = ((request: any) => {
+			client[methodKey] = (request) => {
 				return new Promise((resolve, reject) => {
-					const requestId = uuidv4()
-
+					const requestId = (0, uuid_1.v4)()
 					// Set up one-time listener for this specific request
-					const handleResponse = (event: MessageEvent) => {
+					const handleResponse = (event) => {
 						const message = event.data
 						if (message.type === "grpc_response" && message.grpc_response?.request_id === requestId) {
 							// Remove listener once we get our response
 							window.removeEventListener("message", handleResponse)
-
 							if (message.grpc_response.error) {
 								reject(new Error(message.grpc_response.error))
 							} else {
@@ -152,13 +107,10 @@ export function createGrpcClient<T extends ProtoService>(service: T): GrpcClient
 							}
 						}
 					}
-
 					window.addEventListener("message", handleResponse)
-
 					// Send the request
 					const encodedRequest = encodeRequest(request)
-
-					vscode.postMessage({
+					vscode_1.vscode.postMessage({
 						type: "grpc_request",
 						grpc_request: {
 							service: service.fullName,
@@ -169,9 +121,9 @@ export function createGrpcClient<T extends ProtoService>(service: T): GrpcClient
 						},
 					})
 				})
-			}) as any
+			}
 		}
 	})
-
 	return client
 }
+//# sourceMappingURL=grpc-client-base.js.map

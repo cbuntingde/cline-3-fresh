@@ -1,6 +1,6 @@
 import { LINKS } from "@/constants"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { McpServiceClient } from "@/services/grpc-client"
+import { McpServiceClient } from "@/services/grpc-client.ts"
 import { convertProtoMcpServersToMcpServers } from "@shared/proto-conversions/mcp/mcp-server-conversion"
 import { EmptyRequest } from "@shared/proto/common"
 import { AddRemoteMcpServerRequest } from "@shared/proto/mcp"

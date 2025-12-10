@@ -13,9 +13,9 @@ import McpResponseDisplay from "@/components/mcp/chat-display/McpResponseDisplay
 import McpResourceRow from "@/components/mcp/configuration/tabs/installed/server-row/McpResourceRow"
 import McpToolRow from "@/components/mcp/configuration/tabs/installed/server-row/McpToolRow"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { FileServiceClient, TaskServiceClient } from "@/services/grpc-client"
+import { FileServiceClient, TaskServiceClient } from "@/services/grpc-client.ts"
 import { findMatchingResourceOrTemplate, getMcpServerDisplayName } from "@/utils/mcp"
-import { vscode } from "@/utils/vscode"
+import { vscode } from "@/utils/vscode.ts"
 import {
 	ClineApiReqInfo,
 	ClineAskQuestion,

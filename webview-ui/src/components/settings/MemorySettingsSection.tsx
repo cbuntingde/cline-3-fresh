@@ -8,7 +8,7 @@ import { VSCodeButton, VSCodeCheckbox, VSCodeTextArea } from "@vscode/webview-ui
 import { Brain, Database, Trash2, Download, BarChart3, Upload } from "lucide-react"
 import { memo, useCallback, useEffect, useState } from "react"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { MemoryServiceClient } from "@/services/grpc-client"
+import { MemoryServiceClient } from "@/services/grpc-client.ts"
 import { GetMemoryStatsRequest, GetCurrentProjectMemoryRequest, ClearProjectMemoryRequest, ExportMemoryRequest, ImportMemoryRequest } from "@shared/proto/memory"
 import Section from "./Section"
 import SectionHeader from "./SectionHeader"

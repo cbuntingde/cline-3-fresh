@@ -1,7 +1,7 @@
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import { useFirebaseAuth } from "@/context/FirebaseAuthContext"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { AccountServiceClient } from "@/services/grpc-client"
+import { AccountServiceClient } from "@/services/grpc-client.ts"
 import { EmptyRequest } from "@shared/proto/common"
 
 export const ClineAccountInfoCard = () => {

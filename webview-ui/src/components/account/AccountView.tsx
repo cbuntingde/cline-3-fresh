@@ -1,14 +1,14 @@
 import { VSCodeButton, VSCodeDivider, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 import { memo, useEffect, useState } from "react"
 import { useFirebaseAuth } from "@/context/FirebaseAuthContext"
-import { vscode } from "@/utils/vscode"
+import { vscode } from "@/utils/vscode.ts"
 import VSCodeButtonLink from "../common/VSCodeButtonLink"
 import ClineLogoWhite from "../../assets/ClineLogoWhite"
 import CountUp from "react-countup"
 import CreditsHistoryTable from "./CreditsHistoryTable"
 import { UsageTransaction, PaymentTransaction } from "@shared/ClineAccount"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { AccountServiceClient } from "@/services/grpc-client"
+import { AccountServiceClient } from "@/services/grpc-client.ts"
 import { EmptyRequest } from "@shared/proto/common"
 
 type AccountViewProps = {

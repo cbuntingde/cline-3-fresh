@@ -1,7 +1,7 @@
 import { CODE_BLOCK_BG_COLOR } from "@/components/common/CodeBlock"
 import MermaidBlock from "@/components/common/MermaidBlock"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { StateServiceClient } from "@/services/grpc-client"
+import { StateServiceClient } from "@/services/grpc-client.ts"
 import { PlanActMode, TogglePlanActModeRequest } from "@shared/proto/state"
 import type { ComponentProps } from "react"
 import React, { memo, useEffect, useRef, useState } from "react"

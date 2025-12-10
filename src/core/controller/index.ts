@@ -994,8 +994,6 @@ export class Controller {
 		}
 
 		await sendAddToInputEvent(input)
-
-		console.log("addSelectedCodeToChat", code, filePath, languageId)
 	}
 
 	// 'Add to Cline' context menu in Terminal
@@ -1012,8 +1010,6 @@ export class Controller {
 		// })
 
 		await sendAddToInputEvent(`Terminal output:\n\`\`\`\n${output}\n\`\`\``)
-
-		console.log("addSelectedTerminalOutputToChat", output, terminalName)
 	}
 
 	// 'Fix with Cline' in code actions
@@ -1025,8 +1021,6 @@ export class Controller {
 		const fileMention = this.getFileMentionFromPath(filePath)
 		const problemsString = this.convertDiagnosticsToProblemsString(diagnostics)
 		await this.initTask(`Fix the following code in ${fileMention}\n\`\`\`\n${code}\n\`\`\`\n\nProblems:\n${problemsString}`)
-
-		console.log("fixWithCline", code, filePath, languageId, diagnostics, problemsString)
 	}
 
 	convertDiagnosticsToProblemsString(diagnostics: vscode.Diagnostic[]) {

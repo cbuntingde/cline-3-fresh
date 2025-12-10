@@ -1,7 +1,7 @@
 import VSCodeButtonLink from "@/components/common/VSCodeButtonLink"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { ModelsServiceClient } from "@/services/grpc-client"
-import { vscode } from "@/utils/vscode"
+import { ModelsServiceClient } from "@/services/grpc-client.ts"
+import { vscode } from "@/utils/vscode.ts"
 import { getAsVar, VSC_DESCRIPTION_FOREGROUND } from "@/utils/vscStyles"
 import {
 	anthropicDefaultModelId,

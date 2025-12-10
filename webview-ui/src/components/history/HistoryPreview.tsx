@@ -1,5 +1,5 @@
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { TaskServiceClient } from "@/services/grpc-client"
+import { TaskServiceClient } from "@/services/grpc-client.ts"
 import { formatLargeNumber } from "@/utils/format"
 import { StringRequest } from "@shared/proto/common"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"

@@ -1,7 +1,7 @@
 import { useExtensionState } from "@/context/ExtensionStateContext"
 import { VSCodeButton, VSCodeLink } from "@vscode/webview-ui-toolkit/react"
 
-import { McpServiceClient, UiServiceClient } from "@/services/grpc-client"
+import { McpServiceClient, UiServiceClient } from "@/services/grpc-client.ts"
 
 import { EmptyRequest, StringRequest } from "@shared/proto/common"
 import ServersToggleList from "./ServersToggleList"

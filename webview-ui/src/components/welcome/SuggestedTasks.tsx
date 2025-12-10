@@ -1,4 +1,4 @@
-import { TaskServiceClient } from "@/services/grpc-client"
+import { TaskServiceClient } from "@/services/grpc-client.ts"
 import { NewTaskRequest } from "@shared/proto/task"
 import React from "react"
 import QuickWinCard from "./QuickWinCard"

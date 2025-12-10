@@ -3,7 +3,7 @@ import { EmptyRequest, StringRequest } from "@shared/proto/common"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
-import { BrowserServiceClient, UiServiceClient } from "../../services/grpc-client"
+import { BrowserServiceClient, UiServiceClient } from "../../services/grpc-client.ts"
 
 interface ConnectionInfo {
 	isConnected: boolean

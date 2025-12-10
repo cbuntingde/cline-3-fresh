@@ -1,5 +1,5 @@
 import { CODE_BLOCK_BG_COLOR } from "@/components/common/CodeBlock"
-import { TaskServiceClient } from "@/services/grpc-client"
+import { TaskServiceClient } from "@/services/grpc-client.ts"
 import { AskResponseRequest } from "@shared/proto/task"
 import styled from "styled-components"
 

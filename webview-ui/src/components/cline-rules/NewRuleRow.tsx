@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react"
-import { vscode } from "@/utils/vscode"
+import { vscode } from "@/utils/vscode.ts"
 import { VSCodeButton } from "@vscode/webview-ui-toolkit/react"
 import { useClickAway } from "react-use"
-import { FileServiceClient } from "@/services/grpc-client"
+import { FileServiceClient } from "@/services/grpc-client.ts"
 import { CreateRuleFileRequest } from "@shared/proto-conversions/file/rule-files-conversion"
 
 interface NewRuleRowProps {

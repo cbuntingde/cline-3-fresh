@@ -1,4 +1,4 @@
-import { McpServiceClient } from "@/services/grpc-client"
+import { McpServiceClient } from "@/services/grpc-client.ts"
 import { McpMarketplaceItem, McpServer } from "@shared/mcp"
 import { StringRequest } from "@shared/proto/common"
 import { useCallback, useMemo, useRef, useState } from "react"

@@ -747,7 +747,6 @@ export class Task {
 			return
 		}
 
-		console.log("presentMultifileDiff", messageTs)
 		const messageIndex = this.clineMessages.findIndex((m) => m.ts === messageTs)
 		const message = this.clineMessages[messageIndex]
 		if (!message) {
@@ -4783,8 +4782,7 @@ export class Task {
 					// lastMessage.ts = Date.now() DO NOT update ts since it is used as a key for virtuoso list
 					lastMessage.partial = false
 					// instead of streaming partialMessage events, we do a save and post like normal to persist to disk
-					console.log("updating partial message", lastMessage)
-					// await this.saveClineMessagesAndUpdateHistory()
+								// await this.saveClineMessagesAndUpdateHistory()
 				}
 
 				// Let assistant know their response was interrupted for when task is resumed
@@ -4884,8 +4882,7 @@ export class Task {
 					}
 
 					if (this.abort) {
-						console.log("aborting stream...")
-						if (!this.abandoned) {
+										if (!this.abandoned) {
 							// only need to gracefully abort if this instance isn't abandoned (sometimes openrouter stream hangs, in which case this would affect future instances of cline)
 							await abortStream("user_cancelled")
 						}

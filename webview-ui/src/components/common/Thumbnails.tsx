@@ -1,4 +1,4 @@
-import { FileServiceClient } from "@/services/grpc-client"
+import { FileServiceClient } from "@/services/grpc-client.ts"
 import { StringRequest } from "@shared/proto/common"
 import React, { memo, useLayoutEffect, useRef, useState } from "react"
 import { useWindowSize } from "react-use"

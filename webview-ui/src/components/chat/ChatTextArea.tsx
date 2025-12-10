@@ -6,7 +6,7 @@ import Thumbnails from "@/components/common/Thumbnails"
 import Tooltip from "@/components/common/Tooltip"
 import ApiOptions, { normalizeApiConfiguration } from "@/components/settings/ApiOptions"
 import { useExtensionState } from "@/context/ExtensionStateContext"
-import { FileServiceClient, StateServiceClient } from "@/services/grpc-client"
+import { FileServiceClient, StateServiceClient } from "@/services/grpc-client.ts"
 import {
 	ContextMenuOptionType,
 	getContextMenuOptions,
@@ -27,7 +27,7 @@ import {
 	validateSlashCommand,
 } from "@/utils/slash-commands"
 import { validateApiConfiguration, validateModelId } from "@/utils/validate"
-import { vscode } from "@/utils/vscode"
+import { vscode } from "@/utils/vscode.ts"
 import { ChatSettings } from "@shared/ChatSettings"
 import { mentionRegex, mentionRegexGlobal } from "@shared/context-mentions"
 import { ExtensionMessage } from "@shared/ExtensionMessage"

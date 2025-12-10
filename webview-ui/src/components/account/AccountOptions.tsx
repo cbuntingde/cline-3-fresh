@@ -1,5 +1,5 @@
 import { memo } from "react"
-import { AccountServiceClient } from "@/services/grpc-client"
+import { AccountServiceClient } from "@/services/grpc-client.ts"
 import { EmptyRequest } from "@shared/proto/common"
 
 const AccountOptions = () => {
